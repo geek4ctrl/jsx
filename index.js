@@ -13,6 +13,15 @@ let simpleVirtualDOM = (
     </div>
 );
 
+let simpleDom = render(simpleVirtualDOM);
+document.body.appendChild(simpleDom);
+
+let json = JSON.stringify(simpleVirtualDOM, null, ' ');
+
+document.body.appendChild(
+    render(<pre>{json}</pre>)
+)
+
 function h(nodeName, attributes, ...args) {
     let children = args.length ? [].concat(...args) : null;
     return { nodeName, attributes, children };
@@ -38,7 +47,5 @@ function render(virtualNode) {
 }
 
 let virtualDocumentObjectModel = "<div id='foo'>Hello!</div>";
-
 let documentObjectModel = render(virtualDocumentObjectModel);
-
 document.body.appendChild(documentObjectModel);
