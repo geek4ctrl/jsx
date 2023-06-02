@@ -1,5 +1,11 @@
 /** @jsx h */
 
+const elements = "Good day my people".split(" ");
+
+function displayArrayOf(elements) {
+    return elements.map(text => <li>{text}</li>)
+}
+
 function h(nodeName, attributes, ...args) {
     let children = args.length ? [].concat(...args) : null;
     return { nodeName, attributes, children };
