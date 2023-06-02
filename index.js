@@ -9,4 +9,7 @@ function render(virtualNode) {
     if (virtualNode.split) {
         return document.createTextNode(virtualNode);
     }
+
+    let node = document.createElement(virtualNode.nodeName);
+
 }
