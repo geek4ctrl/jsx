@@ -16,4 +16,10 @@ function render(virtualNode) {
     Object.keys(attribute).forEach((key) => {
         node.setAttribute(key, attribute[key]);
     });
+
+    (virtualNode.children || []).forEach(() => {
+        child.appendChild(render(c))
+    });
+
+    return node;
 }
