@@ -5,3 +5,8 @@ function h(nodeName, attributes, ...args) {
     return { nodeName, attributes, children };
 }
 
+function render(virtualNode) {
+    if (virtualNode.split) {
+        return document.createTextNode(virtualNode);
+    }
+}
