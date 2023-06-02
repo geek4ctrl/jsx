@@ -6,6 +6,13 @@ function displayArrayOf(elements) {
     return elements.map(text => <li>{text}</li>)
 }
 
+let simpleVirtualDOM = (
+    <div id="foo">
+        <p>Simple JSX Renderer</p>
+        <ul>{displayArrayOf(elements)}</ul>
+    </div>
+);
+
 function h(nodeName, attributes, ...args) {
     let children = args.length ? [].concat(...args) : null;
     return { nodeName, attributes, children };
