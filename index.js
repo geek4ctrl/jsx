@@ -23,3 +23,9 @@ function render(virtualNode) {
 
     return node;
 }
+
+let virtualDocumentObjectModel = "<div id='foo'>Hello!</div>";
+
+let documentObjectModel = render(virtualDocumentObjectModel);
+
+document.body.appendChild(documentObjectModel);
